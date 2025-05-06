@@ -41,7 +41,7 @@ export async function signup(req, res){
 			email,
 			password: hashedPassword,
 			username,
-			image, // not gonna use image but gonna keep here if i ever want to add image icon for users how netflix does
+			//image, // not gonna use image but gonna keep here if i ever want to add image icon for users how netflix does
 		});
 
 		generateTokenAndSetCookie(newUser._id, res);

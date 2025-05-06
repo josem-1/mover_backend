@@ -30,13 +30,25 @@ app.use(express.json());
 app.use(cookieParser());
 
 
+console.log("AuthRoutes: ", authRoutes);
 app.use("/api/auth", authRoutes);
+
+console.log("SearchRoutes: ", searchRoutes);
 app.use('/api/search', searchRoutes);
+
+console.log("mediaRoutes: ", mediaRoutes);
 app.use('/api/media', mediaRoutes);
+
+console.log("genreRoutes: ", genreRoutes);
 app.use('/api/genre',  protectRoute, genreRoutes);
+
+console.log("personRoutes: ", personRoutes);
 app.use('/api/person', protectRoute, personRoutes);
+
+console.log("trendingRoutes: ", trendingRoutes);
 app.use('/api/trending', protectRoute, trendingRoutes);
 
+console.log("userRoutes: ", userRoutes);
 app.use('/api/user', protectRoute, userRoutes);
 
 if (ENV_VARS.NODE_ENV === "production") {

@@ -1,7 +1,7 @@
 import express from "express";
 import cookieParser from "cookie-parser";
 import path from "path";
-
+import cors from 'cors';
 
 
 import searchRoutes from './routes/search.route.js';
@@ -19,6 +19,11 @@ import {protectRoute } from "./middleware/protectRoute.js";
 
 
 const app = express();
+
+app.use(cors({
+	origin: 'https://mover-frontend-1.onrender.com/',
+	credentials: true
+}));
 
 const PORT = ENV_VARS.PORT;
 const __dirname = path.resolve();

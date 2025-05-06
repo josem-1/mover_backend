@@ -51,13 +51,13 @@ app.use('/api/trending', protectRoute, trendingRoutes);
 console.log("userRoutes: ", userRoutes);
 app.use('/api/user', protectRoute, userRoutes);
 
-if (ENV_VARS.NODE_ENV === "production") {
-	app.use(express.static(path.join(__dirname, "../frontend/build")));
+// if (ENV_VARS.NODE_ENV === "production") {
+// 	app.use(express.static(path.join(__dirname, "../frontend/build")));
 
-	app.get("/*", (_req, res) => {
-		res.sendFile(path.resolve(__dirname, "../frontend/build/index.html"));
-	});
-}
+// 	app.get("/*", (_req, res) => {
+// 		res.sendFile(path.resolve(__dirname, "../frontend/build/index.html"));
+// 	});
+// }
 
 app.listen(PORT, '0.0.0.0', () => {
 	console.log("Server started at http://localhost:" + PORT);

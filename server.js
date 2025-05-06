@@ -21,7 +21,7 @@ import {protectRoute } from "./middleware/protectRoute.js";
 const app = express();
 
 app.use(cors({
-	origin: 'https://mover-frontend-1.onrender.com/',
+	origin: 'https://mover-frontend-1.onrender.com',
 	credentials: true
 }));
 

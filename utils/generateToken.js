@@ -7,10 +7,9 @@ export const generateTokenAndSetCookie = (userId, res) => {
 	res.cookie("jwt-mover", token, {
 		
 		maxAge: 365 * 24 * 60 * 60 * 1000,
-		//not sure why but max age has to be in millliseconds accroding to that tim guy on yt so following the format days x hours x minutes x seconds x 1000(bcuz of stupid milliseconds
 		httpOnly: true, 
 		sameSite: "none", 
-		secure: true, //still don't fully understand dev and prod difference in running, npm run dev vs run build???? the world will never know.....
+		secure: true, 
 	});
 
 	return token;

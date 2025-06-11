@@ -1,5 +1,5 @@
 import {fetchFromTMDB } from '../services/tmdb.service.js';
-//functions for get trending stuff, following api sample format, please freakin work
+//functions for get trending stuff, following api sample format
 
 export async function getTrendingMovies(req, res) {
   try {

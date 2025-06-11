@@ -10,7 +10,7 @@ const router = express.Router();
 router.get('/watchlist',getWatchlist);
 router.post('/watchlist',addToWatchlist);
 router.delete('/watchlist/:mediaId',removeFromWatchlist);  
-//same get,post,del fro watchlist and wathchistory, i think, me thinks, myself thinks,,,,,im going crazy with this freaking project
+//same get,post,del fro watchlist and wathchistory
 router.get('/watchhistory',getWatchHistory);
 router.post('/watchhistory',addToWatchHistory);
 router.delete('/watchhistory/:mediaId',removeFromWatchHistory);

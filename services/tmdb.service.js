@@ -16,9 +16,7 @@ export const fetchFromTMDB = async (url) => {
   } catch{
     console.log("Tmdb is a bum and is giving you errors, so check in postman logs to square up with it");
     throw error;
-    //ahh shit, here we go again...back to postman, heheh
-    //man i freakin love postman, the only thing about this project that i actually like is the testing of it
-  }
+    }
 };
 
 //in the async functions,, type is like movie or tv show and query is the id number

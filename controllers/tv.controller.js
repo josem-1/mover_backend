@@ -1,6 +1,4 @@
 import {fetchFromTMDB} from "../services/tmdb.service.js";
-//these functions call to services then tmdb api to pull info, using 'v3' api, whatever the hell tmdb claims that to be 
-//okay if v3 of tmdb doesnt work, imma crashout bcuz why is it so hard to use a freaking api
 export async function getTrendingTv(req, res) {
 	try {
 		const data = await fetchFromTMDB("https://api.themoviedb.org/3/trending/tv/day?language=en-US");

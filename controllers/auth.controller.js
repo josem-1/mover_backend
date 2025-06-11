@@ -56,7 +56,7 @@ export async function signup(req, res){
 		});
 	} catch (error) {
 		console.log("auth controller, signup error", error.message);
-		res.status(500).json({success: false, message: "if i get another error, imma crashout" });
+		res.status(500).json({success: false, message: "auth controller error in signup" });
 	}
 }
 
@@ -90,7 +90,7 @@ export async function login(req, res){
 		});
 	} catch (error) {
 		console.log("auth controller,,login funciton error", error.message);
-		res.status(500).json({ success: false, message: "...........idk anymore, but this crap aint working" });
+		res.status(500).json({ success: false, message: "auth controller in login error" });
 	}
 }
 

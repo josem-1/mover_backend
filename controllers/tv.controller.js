@@ -8,7 +8,7 @@ export async function getTrendingTv(req, res) {
 
 		res.json({ success: true, content: randomMovie });
 	} catch (error) {
-		res.status(500).json({success: false, message: "gettreningtv error" });
+		res.status(500).json({success: false, message: "gettrendingtv error in tv controller" });
 	}
 }
 
@@ -22,7 +22,7 @@ export async function getTvTrailers(req, res) {
 			return res.status(404).send(null);
 		}
 
-		res.status(500).json({success: false, message: "error in the get tv trailers" });
+		res.status(500).json({success: false, message: "error in the get tv trailers in tv controller" });
 	}
 }
 
@@ -36,7 +36,7 @@ export async function getTvDetails(req, res) {
 			return res.status(404).send(null);
 		}
 
-		res.status(500).json({success: false, message: "internal server errrro" });
+		res.status(500).json({success: false, message: "get tv detail error in tv controller" });
 	}
 }
 
@@ -46,7 +46,7 @@ export async function getSimilarTvs(req, res) {
 		const data = await fetchFromTMDB(`https://api.themoviedb.org/3/tv/${id}/similar?language=en-US&page=1`);
 		res.status(200).json({success: true, similar: data.results });
 	} catch (error) {
-		res.status(500).json({success: false, message:"error agin, bcuz yours stupid, in the getsimilartvs func" });
+		res.status(500).json({success: false, message:"error getsimilartvs in tv controller " });
 	}
 }
 
@@ -56,6 +56,6 @@ export async function getTvsByCategory(req, res) {
 		const data = await fetchFromTMDB(`https://api.themoviedb.org/3/tv/${category}?language=en-US&page=1`);
 		res.status(200).json({success: true, content: data.results });
 	} catch (error) {
-		res.status(500).json({success: false, message: "error bcuz im dumbo, gettvsbycategory error" });
+		res.status(500).json({success: false, message: "gettvsbycategory error in tv controller" });
 	}
 }

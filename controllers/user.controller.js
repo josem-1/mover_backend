@@ -6,7 +6,7 @@ export async function getWatchlist(req, res) {
     const user = await User.findById(req.user.id);
     return res.json({ success: true, watchlist: user.watchlist });
   } catch (err) {
-    console.error('this stupid funciton didnt work to get watchlst,,,,,,,i wanna drop out again', err);
+    console.error('getwatchlisterror in user controller', err);
     return res.status(500).json({ success: false, message: err.message });
   }
 }
@@ -32,11 +32,11 @@ export async function removeFromWatchlist(req, res) {
     const user = await User.findById(req.user.id);
     user.watchlist = user.watchlist.filter(
       entry => entry.mediaId !== mediaIdNum
-    );//i hate this functino so much, why do i need so much crap to removed from a dango list. 
+    ); 
     await user.save();
     return res.json({ success: true, watchlist: user.watchlist });
   } catch (err) {
-    console.error('attemepted devious lick on watchlist, but failed to removed', err);
+    console.error('failed to removed from watchlist in user controller', err);
     return res.status(500).json({ success: false, message: err.message });
   }
 }
@@ -47,11 +47,10 @@ export async function getWatchHistory(req, res) {
     const user = await User.findById(req.user.id);
     return res.json({ success: true, watchHistory: user.watchHistory });
   } catch (err) {
-    console.error('a problem with wacht history fetching', err);
+    console.error('a problem with wacht history fetching in user controller', err);
     return res.status(500).json({ success: false, message: err.message });
   }
-}//err, 'aaron earned an iron urn' hehehe,,,,,,i hate this project so much
-
+}
 
 export async function addToWatchHistory(req, res) {
   try {
@@ -61,7 +60,7 @@ export async function addToWatchHistory(req, res) {
     await user.save();
     return res.json({ success: true, watchHistory: user.watchHistory });
   } catch (err) {
-    console.error('shouldve coulda woulda added to watchhistory, but failed', err);
+    console.error('failed to add to watchlist in user controller', err);
     return res.status(500).json({ success: false, message: err.message });
   }
 }

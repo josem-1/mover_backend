@@ -15,14 +15,13 @@ const watchEntrySchema = new mongoose.Schema({
 		required: true
 	},
 	posterPath: {
-		type: String}, //posterpath is photo in the tmdb api. why tf do they call it poster, i hate this api iioiiiiihojhhiojfhiahafioafeafe
-	genres:[String],  //for now pull genres with api but maybe later on keep track of them in mongogogo db, idk fo r now api might be better
-	//genre's has to be an array, do not go back to not using an arry, stupid api
-	director:String, //who freaking care about the director???????????
+		type: String}, 
+	genres:[String],  
+	director:String, 
 	createdAt:{ 
 		type: Date, 
-		default: Date.now //if date.now donest work, then im suing w3 
-	}//this could be a nice detail but if mongodb trips up bcuz of this, its getting cut, idc. 
+		default: Date.now 
+	}
 });
 
   
@@ -42,7 +41,7 @@ const userSchema = mongoose.Schema({
 		required: true,
 	},
 	watchlist:[watchEntrySchema],//array
-  	watchHistory:[watchEntrySchema]//second array, hella arrays, arrays on arrays on arrys,,, not really tho
+  	watchHistory:[watchEntrySchema]//second array, hella arrays, arrays on arrays on arrys
 },{
 	timestamps: true
 });
